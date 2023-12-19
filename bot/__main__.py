@@ -4,15 +4,22 @@ import logging
 from dotenv import load_dotenv
 
 from aiogram import Bot, Dispatcher
-from commands import register_user_commands
+from aiogram.types import BotCommand
+from commands import register_user_commands, bot_commands
 
 load_dotenv()
 TOKEN = os.getenv("KEY")
 
 async def main() -> None:
     logging.basicConfig(level=logging.DEBUG)
+
+    commands_for_bot = []
+    for cmd in bot_commands:
+        commands_for_bot.append(BotCommand(command=cmd[0], description=cmd[1]))
+
     dp = Dispatcher()
     bot = Bot(TOKEN)
+    await bot.set_my_commands(commands=commands_for_bot)
 
     register_user_commands(dp)
 
