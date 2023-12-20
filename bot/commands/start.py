@@ -1,4 +1,5 @@
-from aiogram import types
+from aiogram.types import Message
 
-async def start(message: types.Message) -> None:
+
+async def start(message: Message) -> None:
     await message.answer('Привет')

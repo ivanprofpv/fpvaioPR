@@ -5,7 +5,9 @@ from dotenv import load_dotenv
 
 from aiogram import Bot, Dispatcher
 from aiogram.types import BotCommand
-from commands import register_user_commands, bot_commands
+
+from bot.commands.bot_commands import bot_commands
+from commands import register_user_commands
 
 load_dotenv()
 TOKEN = os.getenv("KEY")
