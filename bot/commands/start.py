@@ -16,5 +16,5 @@ async def start(message: Message) -> None:
 
     await message.answer(
         'Меню',
-        reply_markup=menu_builder.as_markup()
+        reply_markup=menu_builder.as_markup(resize_keyboard=True)
     )
