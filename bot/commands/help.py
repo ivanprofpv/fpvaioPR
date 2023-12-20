@@ -13,6 +13,9 @@ async def help_command(message: types.Message, command: CommandObject):
                 )
         else:
             return await message.answer('Команда не существует')
+    return help_func(message)
+
+async def help_func(message: types.Message):
     return await message.answer(
         'Помощь по боту\n'
         'Для получения доп.информации о команде, используйте /help <команда>'
