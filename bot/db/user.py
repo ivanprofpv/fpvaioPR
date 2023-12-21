@@ -1,3 +1,7 @@
+"""
+Model user
+"""
+
 import datetime
 
 from sqlalchemy import Column, Integer, VARCHAR, DATE
@@ -8,7 +12,7 @@ class User(BaseModel):
     __tablename__ = 'users'
 
     # telegram user id
-    user_id = Column(Integer, unique=True, nullable=False)
+    user_id = Column(Integer, unique=True, nullable=False, primary_key=True)
 
     # telegram user name
     username = Column(VARCHAR(32), unique=False, nullable=True)
